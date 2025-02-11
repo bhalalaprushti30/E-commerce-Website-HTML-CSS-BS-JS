@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></link>
+    <title>Accesories</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                box-sizing:border-box;
+            }
+            .top-navbar{
+                width:100%;
+                height:9vh;
+                background-color:navy;
+                display:flex;
+                align-items:center;
+                text-align:center;
+                justify-content:space-between;
+            }
+            .top-images{
+                margin-left:10px;
+            }
+            .other-links{
+                margin-right:33px;
+            }
+            .other-links{
+                color:navy;
+                margin-left:10px;
+                cursor:pointer;
+            }
+            #btn-login{
+                width:100px;
+                border:2px solid white;
+                color: navy;
+                font-weight:bold;
+                border-radius:5px;
+                height:5ch;
+                transition:0.5 ease;
+                cursor:pointer;
+            }
+            #btn-login a{
+                text-decoration:none;
+                color:navy;
+                transition:0.5 ease;
+            }
+            #btn-login a:hover{
+                background-color:skyblue;
+                color:navy;
+            }
+            #btn-login:hover{
+                background-color: skyblue;
+            }
+            #btn-signup{
+                width:100px;
+                border:2px solid white;
+                color: navy;
+                font-weight:bold;
+                border-radius:5px;
+                height:5ch;
+                transition:0.5 ease;
+                cursor:pointer;
+            }
+            #btn-signup a{
+                text-decoration:none;
+                color:navy;
+                transition:0.5 ease;
+            }
+            #btn-signup a:hover{
+                background-color:skyblue;
+                color:navy;
+            }
+            #btn-signup:hover{
+                background-color: skyblue;
+            }
+            @media screen and(max-width:500px){
+                .top-images{
+                    margin-left:20px;
+                    width:20px;
+                }
+                #btn-login{
+                    width:40px;
+                    height:5vh;
+                }
+            }
+            @media screen and(max-width:350px){
+                .top-images{
+                    margin-left:20px;
+                    width:20px;
+                }
+                #btn-login{
+                    width:30px;
+                    height:5vh;
+                }
+            }
+            .home-section{
+                width:100px;
+                width:100%;
+                background-color:white;
+            }
+            .bg{
+                background-color:navy;
+                border: 1px solid white;
+            }
+            .navbar-toggler {
+                border: 4px solid white;
+            }
+            @media screen and(max-width:800px){
+                .carousel-item{ 
+                    height:500px;
+                }
+            }
+            @media screen and(max-width:800px){
+                .carousel-item{ 
+                    height:500px;
+                }
+            }
+            .card-group{
+              text-align: center;
+            }
+            .footer{
+                background-color: navy;
+                padding: 10px 0;
+                line-height: 1.5;
+                font-family:'Poppins',sans-serif;
+            }
+            .row{
+                display:flex;
+                flex-wrap:wrap;
+            }
+            .footer-col{
+                width:25%;
+                padding:70px;
+            }
+            ul{
+                list-style: none;
+            }
+            .footer-col h4{
+                font-size:18px;
+                color:white;
+                text-transform: capitalize;
+                margin-bottom: 35px;
+                font-weight: 500;
+                position: relative;
+            }
+            .footer-col h4::before{
+                content:'';
+                position: absolute;
+                left: 0;
+                bottom: -10px;
+                background-color: #e91e63;
+                height: 2px;
+                box-sizing:border-box;
+                width: 100px;
+            }
+            .footer-col ul li:not(:last-child){
+                margin-bottom: 10px;
+            }
+            .footer-col ul li a{
+                font-size:16px;
+                text-transform: capitalize;
+                color: white;
+                text-decoration: none;
+                font-weight: 300;
+                color:#bbbbbb;
+                display:block;
+                transition:all 0.3s ease;
+            }
+            .footer-col p{
+                font-size:16px;
+                text-transform: capitalize;
+                color: white;
+                text-decoration: none;
+                font-weight: 300;
+                color:#bbbbbb;
+                display:block;
+            }
+            .footer-col ul li a:hover{
+                color:white;
+                padding-left: 8px;
+            }
+            .footer-col .social-links a{
+                display: inline-block;
+                height: 40px;
+                width:40px;
+                background-color: rgb(255,255,255);
+                text-align: center;
+                line-height: 40px;
+                border-radius: 50%;
+                color:navy;
+                transition: all 0.5s ease;;
+            }
+            .footer-col .social-links a:hover{
+                color:#24262b;
+                background-color: navy;
+            }
+            @media (max-width: 767px) {
+                .footer-col{
+                    width:25%;
+                    padding: 0 15px;
+                    margin-bottom: 30px;
+                }
+            }
+            @media (max-width: 574px) {
+                .footer-col{
+                    width:100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="top-navbar sticky-top">
+            <div class="top-images">
+                <img src="C:\Users\prushti\Documents\img\SK.png" height="50px" width="100px">
+            </div>
+            <div class="other-links">
+                <button id="btn-login"><a href="login.html">Login</a></button>
+                <button id="btn-signup"><a href="signup.html">Sign Up</a></button>
+            </div>
+        </div>
+        <div class="home-section">
+          <nav class="navbar navbar-expand-md bg">
+            <div class="container-fluid">
+               <a class="navbar-brand text-white fs-1" href="#">SK</a>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                        <a class="nav-link mx-3 text-white fs-4" href="watches.html">Watches</a>
+                     </li>
+                     <li class="nav-item ">
+                        <a class="nav-link mx-3 text-white fs-4" href="premium.html">Premium Watches</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link mx-3 text-white fs-4" href="newarrivals.html">New Arrivals</a>
+                     </li>
+                     <li class="nav-item ">
+                        <a class="nav-link mx-3 text-white fs-4" href="smart.html">Smart</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link mx-3 text-white fs-4" href="clocks.html">Clocks</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link mx-3 text-white fs-4" href="accesories.html">Accesories</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link mx-3 text-white fs-4" href="more.html">More</a>
+                     </li>
+                  </ul>
+                  <form class="d-flex">
+                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                     <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form>
+               </div>
+            </div>
+         </nav>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="home.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Accesories</li>
+              </ol>
+            </nav>
+            <div class="container-fluid">
+                    <img src=https://www.titan.co.in/wps/wcm/connect/titanrt/499ed942-27e3-4f7d-bdf8-53833bfd57d8/desktop/Titan_Espot_Banner_2500x500-min.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80OGR2D068O7K5LN3O26-499ed942-27e3-4f7d-bdf8-53833bfd57d8-desktop-olYpqEY class="d-block w-100" alt="..." style="width: 100%;">
+            </div><br>
+            <div class="card-group">
+                <div class="card">
+                  <img src=https://staticimg.titan.co.in/Titan/Catalog/TB190LM4TN_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">BLACK & BROWN LEATHER BELT
+                        </p>
+                    <b>₹2,009</b>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src=https://staticimg.titan.co.in/Titan/Catalog/TB163LM4R2_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">BLACK & BROWN REVERSIBLE GENUINE LEATHER BELT
+                    </p>
+                    <b>₹1,749</b>
+                  </div>
+                </div>
+                <div class="card">
+                    <img src=https://staticimg.titan.co.in/Titan/Catalog/TB181LM1R2_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">BLACK & BROWN REVERSIBLE GENUINE LEATHER BELT
+                    </p>
+                      <b>₹1,749</b>
+                    </div>
+                  </div>
+                <div class="card">
+                  <img src=https://staticimg.titan.co.in/Titan/Catalog/TB189LM4BR_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">TAN GENUINE LEATHER BELT
+                    </p>
+                    <b>₹1,295</b>
+                  </div>
+                </div>
+            </div>  <br>  
+            <div class="card-group">
+                <div class="card">
+                  <img src=https://staticimg.titan.co.in/Titan/Catalog/TW273LM1TN_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">TAN LEATHER BI-FOLD WALLET
+                        </p>
+                    <b>₹1,799</b>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src=https://staticimg.titan.co.in/Titan/Catalog/TW270LM1BK_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">BLACK BIFOLD LEATHER WALLETS
+                    </p>
+                    <b>₹1,449</b>
+                  </div>
+                </div>
+                <div class="card">
+                    <img src=https://staticimg.titan.co.in/Titan/Catalog/TW228LM1BK_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">RFID PROTECTED ANTI THEFT WALLET IN BLACK
+                        </p>
+                      <b>₹2,595</b>
+                    </div>
+                  </div>
+                <div class="card">
+                  <img src=https://staticimg.titan.co.in/Titan/Catalog/TW229LM1NV_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">RFID PROTECTED ANTI THEFT WALLET IN NAVY
+                    </p>
+                    <b>₹2,295</b>
+                  </div>
+                </div>
+            </div><br> 
+            <div class="container-fluid">
+                <img src=https://www.titan.co.in/wps/wcm/connect/titan/c35e9782-585b-4c79-b11b-cd7d8e154179/desktop/1000x200.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80OO8010QKMQAAEP2004-c35e9782-585b-4c79-b11b-cd7d8e154179-desktop-noy7lJS class="d-block w-100" alt="..." style="width: 100%;">
+            </div><br>
+            <div class="card-group">
+                <div class="card">
+                  <img src=https://staticimg.titan.co.in/Titan/Catalog/1001567024S_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">24 MM TAN GENUINE LEATHER STRAPS FOR MEN
+                    </p>
+                    <b>₹1,375</b>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src=https://staticimg.titan.co.in/Titan/Catalog/NDCSF2010626CBG_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">20 MM BLACK & GOLDEN CERAMIC & METAL STRAP FOR MEN
+                    </p>
+                    <b>₹4,300</b>
+                  </div>
+                </div>
+                <div class="card">
+                    <img src=https://staticimg.titan.co.in/Titan/Catalog/101018012SQ_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">12 MM GENUINE LEATHER STRAPS FOR WOMEN
+                    </p>
+                      <b>₹430</b>
+                    </div>
+                  </div>
+                <div class="card">
+                  <img src=https://staticimg.titan.co.in/Titan/Catalog/112094012SQ_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">12 MM GREEN GENUINE LEATHER STRAP FOR WOMEN
+                    </p>
+                    <b>₹300</b>
+                  </div>
+                </div>
+            </div> <br>
+            <div class="container-fluid">
+                <img src=https://staticimg.titan.co.in/production/promotions/Banner/2500x500_FT_Tunes.jpg class="d-block w-100" alt="..." style="width: 100%;">
+        </div><br>
+        <div class="card-group">
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Fastrack/Catalog/FT3GNA03_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">REFLEX TUNES TRULY WIRELESS GREEN EAR BUDS WITH 24 HRS BATTERY LIFE
+                </p>
+                <b>₹2,695</b><small style="text-decoration:line-through;margin-left:4px;">₹2,995</small><small style="color:red">(10% Off)</small>
+              </div>
+            </div>
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Fastrack/Catalog/FT3RGA04_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">REFLEX TUNES TRULY WIRELESS ROSE GOLD EAR BUDS WITH 24 HRS BATTERY LIFE
+                </p>
+                <b>₹2,695</b><small style="text-decoration:line-through;margin-left:4px;">₹2,995</small><small style="color:red">(10% Off)</small>
+              </div>
+            </div>
+            <div class="card">
+                <img src=https://staticimg.titan.co.in/Fastrack/Catalog/FT4PKB03_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">REFLEX TUNES TRULY WIRELESS PINK EAR BUDS WITH 40 HRS BATTERY LIFE
+                </p>
+                  <b>₹4,495</b>
+                </div>
+              </div>
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Fastrack/Catalog/FO2BLA03_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">REFLEX TUNES - OVER THE HEAD BLUE WIRELESS HEADPHONES
+                </p>
+                <b>₹7,445</b>
+              </div>
+            </div>
+        </div> <br>
+        <div class="container-fluid">
+            <h2 style="margin-left:10%;color:navy;">Collection Price List</h2>
+            <h5 style="margin-left:10%;">Collection</h5><hr>
+            <h6 style="color:skyblue;margin-left:10%;">Black & Brown Leather Belt - ₹2,099</h6><hr>
+            <h6 style="color:skyblue;margin-left:10%;">Tan Genuine Leather Belt - ₹1,295</h6><hr>
+            <h6 style="color:skyblue;margin-left:10%;">Black Genuine Leather Belt - ₹1,549</h6><hr>
+            <h6 style="color:skyblue;margin-left:10%;">Blue Leather Bi-Fold Wallet - ₹1,796</h6><hr>
+            <h6 style="color:skyblue;margin-left:10%;">Maroon Leather Bi-Fold Wallet - ₹1,999</h6><hr>
+            <h6 style="color:skyblue;margin-left:10%;">22 Mm Black Genuine Leather Straps For Men - ₹1,306</h6><hr>
+            <h6 style="color:skyblue;margin-left:10%;">20 Mm Brown Genuine Leather Straps For Men - ₹1,275</h6><hr>
+            <h6 style="color:skyblue;margin-left:10%;">Reflex Tunes Truly Wireless Black Ear Buds With 24 Hrs Battery Life - ₹2,695</h6><hr>
+            <h6 style="color:skyblue;margin-left:10%;">Reflex Tunes Truly Wireless Rose Gold Ear Buds With 24 Hrs Battery Life - ₹2,695</h6><hr>
+        </div>
+        <div class="footer">
+                <div class="container">
+                    <div class="row" style="display:flex;
+                    flex-wrap:wrap;">
+                        <div class="footer-col">
+                            <h4>COMPANY</h4>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Bog</a></li>
+                                <li><a href="#">Contact Us:********85</a></li>
+                                <li><a href="#">Our Stors</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>POLICIES AND ORDER</h4>
+                            <ul>
+                                <li><a href="#">Authenticity Guarantee</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Shipping and Return Policies</a></li>
+                                <li><a href="#">Terms and Conditions</a></li>
+                                <li><a href="#">Warranty Information</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>HELP</h4>
+                            <ul>
+                                <li><a href="#">FAQ's</a></li>
+                                <li><a href="#">My Account</a></li>
+                                <li><a href="#">Track Order</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
+                            <p>Be the first hear about new arrivals,by-invitation-only scales and special events.</p>
+                            <form class="d-flex" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Email" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit" id="search-btn">Subscribe</button>
+                            </form><br>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    </body>
+</html>

@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></link>
+    <title>New Arrivals</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                box-sizing:border-box;
+            }
+            .top-navbar{
+                width:100%;
+                height:9vh;
+                background-color:navy;
+                display:flex;
+                align-items:center;
+                text-align:center;
+                justify-content:space-between;
+            }
+            .top-images{
+                margin-left:10px;
+            }
+            .other-links{
+                margin-right:33px;
+            }
+            .other-links{
+                color:navy;
+                margin-left:10px;
+                cursor:pointer;
+            }
+            #btn-login{
+                width:100px;
+                border:2px solid white;
+                color: navy;
+                font-weight:bold;
+                border-radius:5px;
+                height:5ch;
+                transition:0.5 ease;
+                cursor:pointer;
+            }
+            #btn-login a{
+                text-decoration:none;
+                color:navy;
+                transition:0.5 ease;
+            }
+            #btn-login a:hover{
+                background-color:white;
+                color:navy;
+            }
+            #btn-login:hover{
+                background-color: white;
+                color:navy;
+            }
+            #btn-signup{
+                width:100px;
+                border:2px solid white;
+                color: navy;
+                font-weight:bold;
+                border-radius:5px;
+                height:5ch;
+                transition:0.5 ease;
+                cursor:pointer;
+            }
+            #btn-signup a{
+                text-decoration:none;
+                color:navy;
+                transition:0.5 ease;
+            }
+            #btn-signup a:hover{
+                background-color:skyblue;
+                color:navy;
+            }
+            #btn-signup:hover{
+                background-color: skyblue;
+            }
+            @media screen and(max-width:500px){
+                .top-images{
+                    margin-left:20px;
+                    width:20px;
+                }
+                #btn-login{
+                    width:40px;
+                    height:5vh;
+                }
+                .other-links img{
+                    height:30px;
+                    width:30px;
+                }
+            }
+            @media screen and(max-width:350px){
+                .top-images{
+                    margin-left:20px;
+                    width:20px;
+                }
+                #btn-login{
+                    width:30px;
+                    height:5vh;
+                }
+                .other-links img{
+                    height:30px;
+                    width:30px;
+                }
+            }
+            .home-section{
+                width:100px;
+                width:100%;
+                background-color:white;
+            }
+            .bg{
+                background-color:navy;
+                border: 1px solid white;
+            }
+            .navbar-toggler {
+                border: 4px solid white;
+            }
+            @media screen and(max-width:800px){
+                .carousel-item{ 
+                    height:150vh;
+                }
+            }
+            @media screen and(max-width:800px){
+                .carousel-item{ 
+                    height:150vh;
+                }
+            }
+            .card-group{
+              text-align: center;
+            }
+            .footer{
+                background-color: navy;
+                padding: 10px 0;
+                line-height: 1.5;
+                font-family:'Poppins',sans-serif;
+            }
+            .row{
+                display:flex;
+                flex-wrap:wrap;
+            }
+            .footer-col{
+                width:25%;
+                padding:70px;
+            }
+            ul{
+                list-style: none;
+            }
+            .footer-col h4{
+                font-size:18px;
+                color:white;
+                text-transform: capitalize;
+                margin-bottom: 35px;
+                font-weight: 500;
+                position: relative;
+            }
+            .footer-col h4::before{
+                content:'';
+                position: absolute;
+                left: 0;
+                bottom: -10px;
+                background-color: #e91e63;
+                height: 2px;
+                box-sizing:border-box;
+                width: 100px;
+            }
+            .footer-col ul li:not(:last-child){
+                margin-bottom: 10px;
+            }
+            .footer-col ul li a{
+                font-size:16px;
+                text-transform: capitalize;
+                color: white;
+                text-decoration: none;
+                font-weight: 300;
+                color:#bbbbbb;
+                display:block;
+                transition:all 0.3s ease;
+            }
+            .footer-col p{
+                font-size:16px;
+                text-transform: capitalize;
+                color: white;
+                text-decoration: none;
+                font-weight: 300;
+                color:#bbbbbb;
+                display:block;
+            }
+            .footer-col ul li a:hover{
+                color:white;
+                padding-left: 8px;
+            }
+            .footer-col .social-links a{
+                display: inline-block;
+                height: 40px;
+                width:40px;
+                background-color: rgb(255,255,255);
+                text-align: center;
+                line-height: 40px;
+                border-radius: 50%;
+                color:navy;
+                transition: all 0.5s ease;;
+            }
+            .footer-col .social-links a:hover{
+                color:#24262b;
+                background-color: navy;
+            }
+            @media (max-width: 767px) {
+                .footer-col{
+                    width:25%;
+                    padding: 0 15px;
+                    margin-bottom: 30px;
+                }
+            }
+            @media (max-width: 574px) {
+                .footer-col{
+                    width:100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="top-navbar sticky-top">
+            <div class="top-images">
+                <img src="C:\Users\prushti\Documents\img\SK.png" height="50px" width="100px">
+            </div>
+            <div class="other-links">
+                <button id="btn-login"><a href="login.html">Login</a></button>
+                <button id="btn-signup"><a href="signup.html">Sign Up</a></button>
+            </div>
+        </div>
+        <div class="home-section">
+          <nav class="navbar navbar-expand-md bg">
+            <div class="container-fluid">
+               <a class="navbar-brand text-white fs-1" href="#">SK</a>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                        <a class="nav-link mx-3 text-white fs-4" href="watches.html">Watches</a>
+                     </li>
+                     <li class="nav-item ">
+                        <a class="nav-link mx-3 text-white fs-4" href="premium.html">Premium Watches</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link mx-3 text-white fs-4" href="newarrivals.html">New Arrivals</a>
+                     </li>
+                     <li class="nav-item ">
+                        <a class="nav-link mx-3 text-white fs-4" href="smart.html">Smart</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link mx-3 text-white fs-4" href="clocks.html">Clocks</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link mx-3 text-white fs-4" href="accesories.html">Accesories</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link mx-3 text-white fs-4" href="more.html">More</a>
+                     </li>
+                  </ul>
+                  <form class="d-flex">
+                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                     <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form>
+               </div>
+            </div>
+         </nav>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="home.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">New Arrivals</li>
+              </ol>
+            </nav>
+            <div class="container-fluid">
+                    <img src=https://www.titan.co.in/wps/wcm/connect/titanrt/652956d7-5071-4450-ba3e-92f1e96b6614/desktop/TD_newarrival_101023_espot.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80OGR2D068O7K5LN3O26-652956d7-5071-4450-ba3e-92f1e96b6614-desktop-oIqrHeV class="d-block w-100" alt="..." style="width: 100%;">
+            </div><br>
+            <div class="card-group">
+                <div class="card">
+                  <img src=https://staticimg.titan.co.in/Titan/Catalog/90188AP01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">SK SMART WATCH 3.0 WITH 1.96 INCH AMOLED DISPLAY | 410 X 502 PIXEL RESOLUTION | AI VOICE ASSISTANT | MULTIPLE MENU STYLES
+                    </p>
+                    <b>₹7,995</b><small style="text-decoration:line-through;margin-left:4px;">₹11,995</small><small style="color:red">(33% Off)</small>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src=https://staticimg.titan.co.in/Titan/Catalog/1878KD01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">SK EDGE FUSION QUARTZ ANALOG BLACK DIAL TWO TONED STEEL & CERAMIC STRAP WATCH FOR MEN
+                    </p>
+                    <b>₹21,995</b>
+                  </div>
+                </div>
+                <div class="card">
+                    <img src=https://staticimg.titan.co.in/Titan/Catalog/1878KD02_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">SK EDGE FUSION QUARTZ ANALOG BLUE DIAL BLUE STEEL & CERAMIC STRAP WATCH FOR MEN
+                      </p>
+                      <b>₹21,995</b>
+                    </div>
+                  </div>
+                <div class="card">
+                  <img src=https://staticimg.titan.co.in/Titan/Catalog/1878KD03_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">SK EDGE FUSION QUARTZ ANALOG BLACK DIAL BLACK STEEL & CERAMIC STRAP WATCH FOR MEN
+                    </p>
+                    <b>₹23,995</b>
+                  </div>
+                </div>
+            </div>  <br>  
+            <div class="container-fluid">
+                <img src=https://www.titan.co.in/wps/wcm/connect/titanrt/68704fa9-584d-4263-a06f-ca897d526905/desktop/TD_FYJ_080823_espot.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80OGR2D068O7K5LN3O26-68704fa9-584d-4263-a06f-ca897d526905-desktop-oDpT33N class="d-block w-100" alt="..." style="width: 100%;">
+            </div><br>
+            <div class="card-group">
+                <div class="card">
+                  <img src=https://staticimg.titan.co.in/Titan/Catalog/94205WL02_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">SK MINIMALISTS QUARTZ ANALOG WITH DATE SILVER DIAL BLACK LEATHER STRAP WATCH FOR WOMEN
+                    </p>
+                    <b>₹7,995</b>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src=https://staticimg.titan.co.in/Titan/Catalog/94205WM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">SK MINIMALISTS QUARTZ ANALOG WITH DATE SILVER DIAL ROSE GOLD STAINLESS STEEL STRAP WATCH FOR WOMEN
+                    </p>
+                    <b>₹8,795</b>
+                  </div>
+                </div>
+                <div class="card">
+                    <img src=https://staticimg.titan.co.in/Titan/Catalog/94205WM02_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">SK MINIMALISTS QUARTZ ANALOG WITH DATE SILVER DIAL ROSE GOLD STAINLESS STEEL STRAP WATCH FOR WOMEN
+                      </p>
+                      <b>₹8,795</b>
+                    </div>
+                  </div>
+                <div class="card">
+                  <img src=https://staticimg.titan.co.in/Titan/Catalog/95249WL01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">SK MINIMALISTS QUARTZ ANALOG WITH DATE SILVER DIAL BLACK LEATHER STRAP WATCH FOR WOMEN
+                    </p>
+                    <b>₹7,445</b>
+                  </div>
+                </div>
+            </div><br> 
+            <div class="card-group">
+                <div class="card">
+                  <img src=https://staticimg.titan.co.in/Titan/Catalog/2653QC06_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">SK EDGE CERAMIC QUARTZ ANALOG GREEN DIAL CERAMIC STRAP WATCH FOR WOMEN
+                    </p>
+                    <b>₹21,995</b>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src=https://staticimg.titan.co.in/Titan/Catalog/2666WL04_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">SK RAGA POWER PEARLS QUARTZ ANALOG MOTHER OF PEARL DIAL BRASS STRAP WATCH FOR WOMEN
+                    </p>
+                    <b>₹5,995</b>
+                  </div>
+                </div>
+                <div class="card">
+                    <img src=https://staticimg.titan.co.in/Titan/Catalog/2666WM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">SK RAGA POWER PEARLS QUARTZ ANALOG MOTHER OF PEARL DIAL BRASS STRAP WATCH FOR WOMEN</p>
+                      <b>₹6,595</b>
+                    </div>
+                  </div>
+                <div class="card">
+                  <img src=https://staticimg.titan.co.in/Titan/Catalog/2720WM01F_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">SK RAGA POWER PEARLS QUARTZ ANALOG ROSE GOLD DIAL BRASS STRAP WATCH FOR WOMEN
+                    </p>
+                    <b>₹8,745</b>
+                  </div>
+                </div>
+            </div> <br>
+        <div class="card-group">
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/2721WM01F_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">SK RAGA POWER PEARLS QUARTZ ANALOG MOTHER OF PEARL DIAL BRASS STRAP WATCH FOR WOMEN
+                </p>
+                <b>₹9,995</b>
+              </div>
+            </div>
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/95223WM01F_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">SK RAGA POWER PEARLS QUARTZ ANALOG MOTHER OF PEARL DIAL BRASS STRAP WATCH FOR WOMEN
+                </p>
+                <b>₹13,995</b>
+              </div>
+            </div>
+            <div class="card">
+                <img src=https://staticimg.titan.co.in/Titan/Catalog/95224WM01F_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">SK RAGA POWER PEARLS QUARTZ ANALOG WHITE DIAL BRASS STRAP WATCH FOR WOMEN
+                  </p>
+                  <b>₹11,245</b>
+                </div>
+              </div>
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/95225WM01F_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">SK RAGA POWER PEARLS QUARTZ ANALOG MOTHER OF PEARL DIAL BRASS STRAP WATCH FOR WOMEN
+                </p>
+                <b>₹13,445</b>
+              </div>
+            </div>
+        </div> <br>
+        <div class="card-group">
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/2687QM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">SK RAGA CHIC QUARTZ ANALOG GREEN DIAL GREEN METAL STRAP WA</p>
+                <b>₹8,995</b>
+              </div>
+            </div>
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/2687WM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">SK  RAGA CHIC QUARTZ ANALOG BLACK DIAL ROSE GOLD METAL STRAP WATCH FOR WOMEN
+                </p>
+                <b>₹8,395</b>
+              </div>
+            </div>
+            <div class="card">
+                <img src=https://staticimg.titan.co.in/Titan/Catalog/2688QM02_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">SK RAGA CHIC QUARTZ ANALOG BLUE DIAL BLUE METAL STRAP WATCH FOR WOMEN
+                  </p>
+                  <b>₹9,245</b>
+                </div>
+              </div>
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/2688WM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">SK RAGA CHIC QUARTZ ANALOG BROWN DIAL ROSE GOLD METAL STRAP WATCH FOR WOMEN
+                </p>
+                <b>₹9,095</b>
+              </div>
+            </div>
+        </div> <br>
+        <div class="card-group">
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/95190WM02_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">SK RAGA NEW YOU QUARTZ ANALOG MOTHER OF PEARL DIAL BRASS STRAP WATCH FOR WOMEN
+                </p>
+                <b>₹22,495</b>
+              </div>
+            </div>
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/95191WM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">SK RAGA NEW YOU QUARTZ ANALOG MULTICOLOURED DIAL BRASS STRAP WATCH FOR WOMEN
+                </p>
+                <b>₹26,995</b>
+              </div>
+            </div>
+            <div class="card">
+                <img src=https://staticimg.titan.co.in/Titan/Catalog/95192WM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">SK  RAGA NEW YOU QUARTZ ANALOG PINK DIAL STAINLESS STEEL STRAP WATCH FOR WOMEN
+                  </p>
+                  <b>₹22,245</b>
+                </div>
+              </div>
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/95195WM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-tex">SK RAGA NEW YOU QUARTZ ANALOG MOTHER OF PEARL DIAL BRASS STRAP WATCH FOR WOMEN
+                </p>
+                <b>₹24,445</b>
+              </div>
+            </div>
+        </div> <br>
+        <div class="card-group">
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/95184QM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">SK WORKWEAR QUARTZ ANALOG BLACK DIAL STAINLESS STEEL STRAP WATCH FOR WOMEN
+                </p>
+                <b>₹8,995</b>
+              </div>
+            </div>
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/95185WM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">SK WORKWEAR QUARTZ ANALOG WHITE DIAL STAINLESS STEEL STRAP WATCH FOR WOMEN
+                </p>
+                <b>₹9,995</b>
+              </div>
+            </div>
+            <div class="card">
+                <img src=https://staticimg.titan.co.in/Titan/Catalog/95185WM02_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">SK WORKWEAR QUARTZ ANALOG WHITE DIAL STAINLESS STEEL STRAP WATCH FOR WOMEN
+                  </p>
+                  <b>₹9,195</b>
+                </div>
+              </div>
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/95190KM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">SK  RAGA NEW YOU QUARTZ ANALOG MOTHER OF PEARL DIAL BRASS STRAP WATCH FOR WOMEN
+                </p>
+                <b>₹22,495</b>
+              </div>
+            </div>
+        </div> <br>   
+        <div class="card-group">
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/2576WM02_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">SK RAGA VIVA QUARTZ ANALOG ROSE GOLD DIAL ROSE GOLD METAL STRAP WATCH FOR WOMEN
+                </p>
+                <b>₹5,995</b>
+              </div>
+            </div>
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/2606QM03_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">SK  RAGA VIVA QUARTZ ANALOG BROWN DIAL BROWN METAL STRAP WATCH FOR WOMEN
+                </p>
+                <b>₹4,995</b><small style="text-decoration:line-through;margin-left:4px;">₹12995</small>
+              </div>
+            </div>
+            <div class="card">
+                <img src=https://staticimg.titan.co.in/Titan/Catalog/2606QM04_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">SK RAGA VIVA QUARTZ ANALOG BLACK DIAL GREY METAL STRAP WATCH FOR WOMEN
+                  </p>
+                  <b>₹4,795</b>
+                </div>
+              </div>
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/95183KM02_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">SK WORKWEAR QUARTZ ANALOG ANTHRACITE DIAL STAINLESS STEEL STRAP WATCH FOR WOMEN
+                </p>
+                <b>₹10,395</b>
+              </div>
+            </div>
+        </div> <br>   
+        <div class="card-group">
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/95236WL01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">SK PURPLE STYLE UP QUARTZ ANALOG PINK DIAL LEATHER STRAP WATCH FOR WOMEN
+                </p>
+                <b>₹7,345</b>
+              </div>
+            </div>
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/95236WM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">SK PURPLE STYLE UP QUARTZ ANALOG WHITE DIAL STAINLESS STEEL STRAP WATCH FOR WOMEN
+                </p>
+                <b>₹9,095</b>
+              </div>
+            </div>
+            <div class="card">
+                <img src=https://staticimg.titan.co.in/Titan/Catalog/95236WM02_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">SK PURPLE STYLE UP QUARTZ ANALOG PINK DIAL STAINLESS STEEL STRAP WATCH FOR WOMEN
+                  </p>
+                  <b>₹9,735</b>
+                </div>
+              </div>
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/95236WM03_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">SK PURPLE STYLE UP QUARTZ ANALOG PINK DIAL STAINLESS STEEL STRAP WATCH FOR WOMEN
+                </p>
+                <b>₹9,795</b>
+              </div>
+            </div>
+        </div> <br>   
+        <div class="container-fluid">
+            <h2 style="margin-left:10%;">Collection Price List</h2>
+            <h5 style="margin-left:10%;">Collection</h5><hr>
+            <h6 style="color:skyblue;margin-left:10%;">SK Smart Watch 3.0 With 1.96 Inch Amloled Display | 410*502 Pixel Resolution | AI Voice Assistant | Multiple Menu Styles - ₹7,995</h6><hr>
+            <h6 style="color:skyblue;margin-left:10%;">SK Edge Fusion Quartz Analog Black Dial Two Toned Steel & Ceramic Strap Watch For Men - ₹21,995</h6><hr>
+            <h6 style="color:skyblue;margin-left:10%;">SK Edge Fusion Quartz Analog Blue Blue Steel & Ceramic Strap Watch For Men -  ₹21,995</h6><hr>
+            <h6 style="color:skyblue;margin-left:10%;">SK Edge Fusion Quartz Analog Black Dial Black Steel & Ceramic Strap Watch For Men - ₹21,995</h6><hr>
+            <h6 style="color:skyblue;margin-left:10%;">SK Minimalists Quartz Analog With Date Silver Dial Black Leather Strap Watch For Women - ₹23,995 </h6><hr>
+            <h6 style="color:skyblue;margin-left:10%;">SK Minimalists Quartz Analog With Date Silver Dial Rose Gold Stainless Steel Strap Watch For Women - ₹8,795</h6><hr>
+            <h6 style="color:skyblue;margin-left:10%;">SK Edge Ceramic Quartz Analog Green Dial Ceramic Strap Watch For Women - ₹21,995</h6><hr>
+            <h6 style="color:skyblue;margin-left:10%;">SK Raga Power Pearls Quartz Analog Mother Of Pearl Dial Brass Strap Watch For Women - ₹5,695</h6><hr>
+
+        </div>
+        <div class="footer">
+                <div class="container">
+                    <div class="row" style="display:flex;
+                    flex-wrap:wrap;">
+                        <div class="footer-col">
+                            <h4>COMPANY</h4>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Bog</a></li>
+                                <li><a href="#">Contact Us:********85</a></li>
+                                <li><a href="#">Our Stors</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>POLICIES AND ORDER</h4>
+                            <ul>
+                                <li><a href="#">Authenticity Guarantee</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Shipping and Return Policies</a></li>
+                                <li><a href="#">Terms and Conditions</a></li>
+                                <li><a href="#">Warranty Information</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>HELP</h4>
+                            <ul>
+                                <li><a href="#">FAQ's</a></li>
+                                <li><a href="#">My Account</a></li>
+                                <li><a href="#">Track Order</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
+                            <p>Be the first hear about new arrivals,by-invitation-only scales and special events.</p>
+                            <form class="d-flex" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Email" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit" id="search-btn">Subscribe</button>
+                            </form><br>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    </body>
+</html>

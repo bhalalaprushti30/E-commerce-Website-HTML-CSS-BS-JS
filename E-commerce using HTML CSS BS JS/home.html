@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-...">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <title>Home</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                box-sizing:border-box;
+            }
+            .top-navbar{
+                width:100%;
+                height:9vh;
+                background-color:navy;
+                display:flex;
+                align-items:center;
+                text-align:center;
+                justify-content:space-between;
+            }
+            .top-images{
+                margin-left:10px;
+            }
+            .other-links{
+                margin-right: 33px;
+            }
+            #btn-login{
+                width:100px;
+                border:2px solid white;
+                color: navy;
+                font-weight:bold;
+                border-radius:5px;
+                height:5ch;
+                transition:0.5 ease;
+                cursor:pointer;
+            }
+            #btn-login a{
+                text-decoration:none;
+                color:navy;
+                transition:0.5 ease;
+            }
+            #btn-login a:hover{
+                background-color:skyblue;
+                color:navy;
+            }
+            #btn-login:hover{
+                background-color: skyblue;
+            }
+            #btn-signup{
+                width:100px;
+                border:2px solid white;
+                color: navy;
+                font-weight:bold;
+                border-radius:5px;
+                height:5ch;
+                transition:0.5 ease;
+                cursor:pointer;
+            }
+            #btn-signup a{
+                text-decoration:none;
+                color:navy;
+                transition:0.5 ease;
+            }
+            #btn-signup a:hover{
+                background-color:skyblue;
+                color:navy;
+            }
+            #btn-signup:hover{
+                background-color: skyblue;
+            }
+            @media screen and(max-width:500px){
+                .top-images img{
+                    margin-left:20px;
+                    width:20px;
+                }
+                #btn-login{
+                    width:40px;
+                    height:5vh;
+                }
+                #btn-signup{
+                    width:40px;
+                    height:5vh;
+                }
+            }
+            @media screen and(max-width:350px){
+                .top-images img{
+                    margin-left:20px;
+                    width:20px;
+                }
+                #btn-login{
+                    width:30px;
+                    height:5vh;
+                }
+                #btn-signup{
+                    width:30px;
+                    height:5vh;
+                }
+            }
+            .home-section{
+                width:100px;
+                width:100%;
+                background-color:white;
+            }
+            .bg{
+                background-color:navy;
+                border: 1px solid white;
+            }
+
+            .navbar-toggler {
+                border: 4px solid white;
+            }
+            @media screen and(max-width:800px){
+                .carousel-item{ 
+                    height:300vh;
+                }
+            }
+            .card-group{
+              text-align: center;
+            }
+            .banner{
+                width:100%;
+                height:50vh;
+                margin-top:50px;
+                background-image: rgb(0,0,0.3);
+            }
+            .banner .content{
+                text-align:center;
+                padding-top: 100px;
+            }
+            .banner .content h1{
+                color:navy;
+                text-shadow:1px 1px 1px black;
+                letter-spacing:3px;
+            }
+            .banner .content p{
+                color:navy;
+                text-shadow:1px 1px 1px black;
+                letter-spacing: 3px;
+            }
+            #bannerbtn button{
+                width:150px;
+                height:38px;
+                background: transparent;
+                color:navy;
+                border:2px solid navy;
+                transition:0.5s ease;
+                cursor:pointer;
+            }
+            #bannerbtn button:hover{
+                background-color: navy;
+                border:none;
+            }
+            h1{
+                color:navy;
+                text-align: center;
+                margin-top:20px;
+            }
+            @media screen and(max-width:500px){
+                .top-images img {
+                    margin-left: 20px;
+                    width: 20px;
+                }
+                #btn-login,
+                #btn-signup {
+                    width: 40px;
+                    height: 5vh;
+                }
+            }
+            .footer{
+                background-color: navy;
+                padding: 10px 0;
+                line-height: 1.5;
+                font-family:'Poppins',sans-serif;
+            }
+            .row{
+                display:flex;
+                flex-wrap:wrap;
+            }
+            .footer-col{
+                width:25%;
+                padding:70px;
+            }
+            ul{
+                list-style: none;
+            }
+            .footer-col h4{
+                font-size:18px;
+                color:white;
+                text-transform: capitalize;
+                margin-bottom: 35px;
+                font-weight: 500;
+                position: relative;
+            }
+            .footer-col h4::before{
+                content:'';
+                position: absolute;
+                left: 0;
+                bottom: -10px;
+                background-color: #e91e63;
+                height: 2px;
+                box-sizing:border-box;
+                width: 100px;
+            }
+            .footer-col ul li:not(:last-child){
+                margin-bottom: 10px;
+            }
+            .footer-col ul li a{
+                font-size:16px;
+                text-transform: capitalize;
+                color: white;
+                text-decoration: none;
+                font-weight: 300;
+                color:#bbbbbb;
+                display:block;
+                transition:all 0.3s ease;
+            }
+            .footer-col p{
+                font-size:16px;
+                text-transform: capitalize;
+                color: white;
+                text-decoration: none;
+                font-weight: 300;
+                color:#bbbbbb;
+                display:block;
+            }
+            .footer-col ul li a:hover{
+                color:white;
+                padding-left: 8px;
+            }
+            .footer-col .social-links a{
+                display: inline-block;
+                height: 40px;
+                width:40px;
+                background-color: rgb(255,255,255);
+                text-align: center;
+                line-height: 40px;
+                border-radius: 50%;
+                color:navy;
+                transition: all 0.5s ease;;
+            }
+            .footer-col .social-links a:hover{
+                color:#24262b;
+                background-color: navy;
+            }
+            @media (max-width: 767px) {
+                .footer-col{
+                    width:25%;
+                    padding: 0 15px;
+                    margin-bottom: 30px;
+                }
+            }
+            @media (max-width: 574px) {
+                .footer-col{
+                    width:100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="top-navbar sticky-top">
+            <div class="top-images">
+                <img src="https://static.vecteezy.com/system/resources/previews/003/189/925/non_2x/watch-classic-logo-icon-design-vector.jpg" height="50px" width="100px">
+            </div>
+            <div class="other-links">
+                <button id="btn-login"><a href="login.html">Login</a></button>
+                <button id="btn-signup"><a href="signup.html">Sign Up</a></button>
+        </div>
+        </div>
+        <div class="home-section">
+            <nav class="navbar navbar-expand-md bg">
+                <div class="container-fluid">
+                   <a class="navbar-brand text-white fs-1" href="#">SK</a>
+                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                   </button>
+                   <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav ms-auto">
+                         <li class="nav-item">
+                            <a class="nav-link mx-3 text-white fs-4" href="watches.html">Watches</a>
+                         </li>
+                         <li class="nav-item ">
+                            <a class="nav-link mx-3 text-white fs-4" href="premium.html">Premium Watches</a>
+                         </li>
+                         <li class="nav-item">
+                            <a class="nav-link mx-3 text-white fs-4" href="newarrivals.html">New Arrivals</a>
+                         </li>
+                         <li class="nav-item ">
+                            <a class="nav-link mx-3 text-white fs-4" href="smart.html">Smart</a>
+                         </li>
+                         <li class="nav-item">
+                            <a class="nav-link mx-3 text-white fs-4" href="clocks.html">Clocks</a>
+                         </li>
+                         <li class="nav-item">
+                            <a class="nav-link mx-3 text-white fs-4" href="accesories.html">Accesories</a>
+                         </li>
+                         <li class="nav-item">
+                            <a class="nav-link mx-3 text-white fs-4" href="more.html">More</a>
+                         </li>
+                      </ul>
+                      <form class="d-flex">
+                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                         <button class="btn btn-outline-success" type="submit">Search</button>
+                      </form>
+                   </div>
+                </div>
+             </nav>
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dw1225d3f2/images/homepage/All_Banners/VDaySale2060_D_310124.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dwa4341255/images/homepage/All_Banners/Smart_home_feb_d.jpg"  class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dw92358de4/images/homepage/All_Banners/SmartVday_Feb_D.jpg" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <h1>TRENDING PRODUCTS</h1><br>
+            <div class="card-group">
+                <div class="card">
+                  <img src="https://th.bing.com/th?id=OPAC.ESNB0%2f3DKHgjAg474C474&w=592&h=550&o=5&dpr=1.4&pid=21.1" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">Neo Splash Blue Dial Stainless Strap Watch</p>
+                    <b>₹6995</b>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="https://th.bing.com/th/id/OIP.pFfgJNILuYYulwAn5sQp0gHaHa?rs=1&pid=ImgDetMain" class="card-img-top" alt="..."><br><br>
+                  <div class="card-body">
+                    <p class="card-text">Titan Talk S with 1.78" AMOLED Display.Advanced BT Calling,100+</p>
+                    <b>₹8995</b><small style="text-decoration:line-through;margin-left:4px;">   ₹12995</small>
+                  </div>
+                </div>
+                <div class="card">
+                    <img src="https://th.bing.com/th/id/OIP.GvZkFIeRHgAQ68a7OyP0OwHaHa?rs=1&pid=ImgDetMain" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">Neo Splash Black Dial Stainless Steel Strap Watch</p>
+                      <b>₹6345</b>
+                    </div>
+                  </div>
+                <div class="card">
+                  <img src="https://th.bing.com/th/id/OIP.cqyb7PWUq-7WuFS3FemUWQHaHa?rs=1&pid=ImgDetMain" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">Edge Baseline Dark Titanium Dial Stainless Steel Strap Watch</p>
+                    <b>₹17995</b>
+                  </div>
+                </div>
+            </div>  
+            <br>  
+            <h1>TOP SELLERS</h1><br>
+            <div class="card-group">
+                <div class="card">
+                  <img src="https://th.bing.com/th/id/OIP.u5OJ2vyiQ_jqDhQjwwgYGAHaHa?rs=1&pid=ImgDetMain" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">Neo Splash Blue Dial Stainless Strap Watch</p>
+                    <b>₹6995</b>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="https://th.bing.com/th/id/OIP.JZowt2lXQ8j1e81rIHlJgAAAAA?rs=1&pid=ImgDetMain" class="card-img-top" alt="..."><br>
+                  <div class="card-body">
+                    <p class="card-text">Titan Talk S with 1.78" AMOLED Display.Advanced BT Calling,100+</p>
+                    <b>₹8995</b><small style="text-decoration:line-through;margin-left:4px;">₹12995</small>
+                  </div>
+                </div>
+                <div class="card">
+                    <img src="https://th.bing.com/th/id/OIP.Q78uTsY_bVZKqPdMTaRR-gHaHa?rs=1&pid=ImgDetMain" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">Woekwear Watch with Green Dial & Fabric Strap</p>
+                      <b>₹3245</b>
+                    </div>
+                  </div>
+                <div class="card">
+                  <img src="https://th.bing.com/th/id/OIP.irvVeNsT8e0g2NzwtCqmtwHaHa?rs=1&pid=ImgDetMain" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">Karishma Black Dial Brass Strap Watch</p>
+                    <b>₹3445</b>
+                  </div>
+                </div>
+            </div>        
+            <div class="banner">
+                <div class="content">
+                    <h1>Get Up To 50% Off</h1>
+                    <p>All products are original and go through strict quality check.</p>
+                    <div id="bannerbtn"><button>SHOP NOW</button></div>
+                </div>
+            </div>
+            <div class="container">
+                <h3 style="font-weight: bold;color:navy;">Smartwatches</h3>
+                <P style="color:navy;">To experience the best of online shopping, you must shop from the right place. And when it comes to buying smartwatches, Titan can be your next favourite online destination. Browse through the latest smartwatch collection online and get special offers. From Titan's Connected X Collection to TraQ and Fastrack wearables, you can find the perfect match in just a few clicks.
+                    With the growing popularity of smartwatches, the fashion-forward crowd is pairing it up with all kinds of outfits. Be it formal, casual, ethnic or even beachwear. You never have to limit your sense of style!</P>
+                <hr>
+                <h3 style="font-weight: bold; color:navy;">SK Watch -  fashoin store for all</h3>
+                <p style="color:navy;">
+                    Walk into the cosmos of fashion with SK, a one stop online fashion destination. Our exhaustive collection Is inspired by international fashion and latest trend style. Over the years, SK has been tremendously successful in making online shopping much convenient and enjoyable with wide product range starting from watches, wall clocks to wallets, belts and straps. With a user-friendly shopping experience, SK aims to fulfil your wishes and deliver your products in fastest time possible. Experience the best in class online shopping with services such as Cash on Delivery, free shipping and seamless return/exchange policies.</p>
+            </div>
+            <div class="footer">
+                <div class="container">
+                    <div class="row" style="display:flex;
+                    flex-wrap:wrap;">
+                        <div class="footer-col">
+                            <h4>COMPANY</h4>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Bog</a></li>
+                                <li><a href="#">Contact Us:********85</a></li>
+                                <li><a href="#">Our Stors</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>POLICIES AND ORDER</h4>
+                            <ul>
+                                <li><a href="#">Authenticity Guarantee</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Shipping and Return Policies</a></li>
+                                <li><a href="#">Terms and Conditions</a></li>
+                                <li><a href="#">Warranty Information</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>HELP</h4>
+                            <ul>
+                                <li><a href="#">FAQ's</a></li>
+                                <li><a href="#">My Account</a></li>
+                                <li><a href="#">Track Order</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
+                            <p>Be the first hear about new arrivals,by-invitation-only scales and special events.</p>
+                            <form class="d-flex" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Email" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit" id="search-btn">Subscribe</button>
+                            </form><br>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    </body>
+</html>

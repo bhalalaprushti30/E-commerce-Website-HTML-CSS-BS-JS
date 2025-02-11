@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MIwNEQyDp8f5rdzvCwUpQq7t2twxKbIjHp0W1l3f8vpNHZw8meJ3bYL0c3f7nD2m" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <title>Premium Watches</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                box-sizing:border-box;
+            }
+            .top-navbar{
+                width:100%;
+                height:9vh;
+                background-color:navy;
+                display:flex;
+                align-items:center;
+                text-align:center;
+                justify-content:space-between;
+            }
+            .top-images{
+                margin-left:10px;
+            }
+            .other-links{
+                margin-right:33px;
+            }
+            #btn-login{
+                width:100px;
+                border:2px solid white;
+                color: navy;
+                font-weight:bold;
+                border-radius:5px;
+                height:5ch;
+                transition:0.5 ease;
+                cursor:pointer;
+            }
+            #btn-login a{
+                text-decoration:none;
+                color:navy;
+                transition:0.5 ease;
+            }
+            #btn-login a:hover{
+                background-color:skyblue;
+                color:navy;
+            }
+            #btn-login:hover{
+                background-color: skyblue;
+            }
+            #btn-signup{
+                width:100px;
+                border:2px solid white;
+                color: navy;
+                font-weight:bold;
+                border-radius:5px;
+                height:5ch;
+                transition:0.5 ease;
+                cursor:pointer;
+            }
+            #btn-signup a{
+                text-decoration:none;
+                color:navy;
+                transition:0.5 ease;
+            }
+            #btn-signup a:hover{
+                background-color:skyblue;
+                color:navy;
+            }
+            #btn-signup:hover{
+                background-color: skyblue;
+            }
+            @media screen and(max-width:500px){
+                .top-images{
+                    margin-left:20px;
+                    width:20px;
+                }
+                #btn-login{
+                    width:40px;
+                    height:5vh;
+                }
+                .other-links img{
+                    height:30px;
+                    width:30px;
+                }
+            }
+            @media screen and(max-width:350px){
+                .top-images{
+                    margin-left:20px;
+                    width:20px;
+                }
+                #btn-login{
+                    width:30px;
+                    height:5vh;
+                }
+                .other-links img{
+                    height:30px;
+                    width:30px;
+                }
+            }
+            .home-section{
+                width:100px;
+                width:100%;
+                background-color:white;
+            }
+            .bg{
+                background-color:navy;
+                border: 1px solid white;
+
+            }
+            .navbar-toggler {
+                border: 4px solid white;
+            }
+            @media screen and(max-width:800px){
+                .carousel-item{ 
+                    height:150vh;
+                }
+            }
+            #top-cards{
+                margin-top: 30px;
+                font-family:'Roboto Slab',serif;
+            }
+            #top-cards .card img{
+                height:60vh;
+            }
+            .card-group{
+              text-align: center;
+            }
+            .banner{
+                width:100%;
+                height:50vh;
+                margin-top:50px;
+                background-image: rgb(0,0,0.3);
+            }
+            .banner .content{
+                text-align:center;
+                padding-top: 100px;
+            }
+            .banner .content h1{
+                color:navy;
+                text-shadow:1px 1px 1px black;
+                letter-spacing:3px;
+            }
+            .banner .content p{
+                color:navy;
+                text-shadow:1px 1px 1px black;
+                letter-spacing: 3px;
+            }
+            #bannerbtn button{
+                width:150px;
+                height:38px;
+                background: transparent;
+                color:navy;
+                border:2px solid navy;
+                transition:0.5s ease;
+                cursor:pointer;
+            }
+            #bannerbtn button:hover{
+                background-color: navy;
+                border:none;
+            }
+            h1{
+                color:navy;
+                text-align: center;
+                margin-top:20px;
+            }
+            .footer{
+                background-color: navy;
+                padding: 10px 0;
+                line-height: 1.5;
+                font-family:'Poppins',sans-serif;
+            }
+            .row{
+                display:flex;
+                flex-wrap:wrap;
+            }
+            .footer-col{
+                width:25%;
+                padding:70px;
+            }
+            ul{
+                list-style: none;
+            }
+            .footer-col h4{
+                font-size:18px;
+                color:white;
+                text-transform: capitalize;
+                margin-bottom: 35px;
+                font-weight: 500;
+                position: relative;
+            }
+            .footer-col h4::before{
+                content:'';
+                position: absolute;
+                left: 0;
+                bottom: -10px;
+                background-color: #e91e63;
+                height: 2px;
+                box-sizing:border-box;
+                width: 100px;
+            }
+            .footer-col ul li:not(:last-child){
+                margin-bottom: 10px;
+            }
+            .footer-col ul li a{
+                font-size:16px;
+                text-transform: capitalize;
+                color: white;
+                text-decoration: none;
+                font-weight: 300;
+                color:#bbbbbb;
+                display:block;
+                transition:all 0.3s ease;
+            }
+            .footer-col p{
+                font-size:16px;
+                text-transform: capitalize;
+                color: white;
+                text-decoration: none;
+                font-weight: 300;
+                color:#bbbbbb;
+                display:block;
+            }
+            .footer-col ul li a:hover{
+                color:white;
+                padding-left: 8px;
+            }
+            .footer-col .social-links a{
+                display: inline-block;
+                height: 40px;
+                width:40px;
+                background-color: rgb(255,255,255);
+                text-align: center;
+                line-height: 40px;
+                border-radius: 50%;
+                color:navy;
+                transition: all 0.5s ease;;
+            }
+            .footer-col .social-links a:hover{
+                color:#24262b;
+                background-color: navy;
+            }
+            @media (max-width: 767px) {
+                .footer-col{
+                    width:25%;
+                    padding: 0 15px;
+                    margin-bottom: 30px;
+                }
+            }
+            @media (max-width: 574px) {
+                .footer-col{
+                    width:100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="top-navbar sticky-top">
+            <div class="top-images">
+                <img src="C:\Users\prushti\Documents\img\SK.png" height="50px" width="100px">
+            </div>
+            <div class="other-links">
+                <button id="btn-login"><a href="login.html">Login</a></button>
+                <button id="btn-signup"><a href="signup.html">Sign Up</a></button>
+            </div>
+        </div>
+        <div class="home-section">
+          <nav class="navbar navbar-expand-md bg">
+            <div class="container-fluid">
+               <a class="navbar-brand text-white fs-1" href="#">SK</a>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                        <a class="nav-link mx-3 text-white fs-4" href="watches.html">Watches</a>
+                     </li>
+                     <li class="nav-item ">
+                        <a class="nav-link mx-3 text-white fs-4" href="premium.html">Premium Watches</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link mx-3 text-white fs-4" href="newarrivals.html">New Arrivals</a>
+                     </li>
+                     <li class="nav-item ">
+                        <a class="nav-link mx-3 text-white fs-4" href="smart.html">Smart</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link mx-3 text-white fs-4" href="clocks.html">Clocks</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link mx-3 text-white fs-4" href="accesories.html">Accesories</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link mx-3 text-white fs-4" href="more.html">More</a>
+                     </li>
+                  </ul>
+                  <form class="d-flex">
+                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                     <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form>
+               </div>
+            </div>
+         </nav>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="home.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Premium Watches</li>
+              </ol>
+            </nav>
+            <div class="container-fluid">
+                    <img src=https://www.titan.co.in/wps/wcm/connect/titanrt/db73e52c-680f-43d1-b2be-8af00a2cce48/desktop/2500x500_Premiumwatches.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80OGR2D068O7K5LN3O26-db73e52c-680f-43d1-b2be-8af00a2cce48-desktop-om2Fvu0 class="d-block w-100" alt="..." style="width: 100%;">
+            </div><br>
+            <div class="card-group">
+                <div class="card">
+                  <img src=https://staticimg.titan.co.in/Titan/Catalog/5074DL01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">SK NEBULA ART DECO SKELETON AUTOMATIC 18 KARAT SOLID GOLD WATCH FOR MEN
+                    </p>
+                    <b>₹4,87,500</b><small style="text-decoration:line-through;margin-left:4px;">₹6,50,000</small><small style="color:red">(25% Off)</small>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src=https://staticimg.titan.co.in/Titan/Catalog/1696QC06_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">SK EDGE CERAMIC QUARTZ ANALOG GREEN STRAP WATCH FOR MEN
+                    </p>
+                    <b>₹26,095</b><small style="text-decoration:line-through;margin-left:4px;">₹28,995</small><small style="color:red">(10% Off)</small>
+                  </div>
+                </div>
+                <div class="card">
+                    <img src=https://staticimg.titan.co.in/Titan/Catalog/1841QC04_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">SK EDGE SQUIRCLE BLUE DIAL CERAMIC STRAP WATCH FOR MEN
+                      </p>
+                      <b>₹40,995</b><small style="text-decoration:line-through;margin-left:4px;">₹50,995</small><small style="color:red">(10% Off)</small>
+                    </div>
+                  </div>
+                <div class="card">
+                  <img src=https://staticimg.titan.co.in/Titan/Catalog/1841NC01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">EDGE SQUIRCLE BLACK DIAL CERAMIC STRAP WATCH
+                    </p>
+                    <b>₹41,995</b>
+                  </div>
+                </div>
+            </div>  <br>  
+            <div class="card-group">
+                <div class="card">
+                  <img src=https://staticimg.titan.co.in/Titan/Catalog/1848KM05_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">QUARTET BROWN DIAL STAINLESS STEEL STRAP WATCH
+                    </p>
+                    <b>₹25,195</b><small style="text-decoration:line-through;margin-left:4px;">₹31,495</small><small style="color:red">(20% Off)</small>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src=https://staticimg.titan.co.in/Titan/Catalog/95200WM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">RAGA DELIGHT MOTHER OF PEARL DIAL METALS STRAP WATCH
+                    </p>
+                    <b>₹14,395</b><small style="text-decoration:line-through;margin-left:4px;">₹17,995</small><small style="color:red">(20% Off)</small>
+                  </div>
+                </div>
+                <div class="card">
+                    <img src=https://staticimg.titan.co.in/Titan/Catalog/95167YM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">RAGA X MASABA GOLDEN DIAL STEEL & BRASS STRAP WATCH
+                      </p>
+                      <b>₹1,995</b><small style="text-decoration:line-through;margin-left:4px;">₹17,995</small><small style="color:red">(20% Off)</small>
+                    </div>
+                  </div>
+                <div class="card">
+                  <img src=https://staticimg.titan.co.in/Titan/Catalog/95084WM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">STELLAR BY TITAN PINK DIAL AUTOMATIC WATCH FOR WOMEN
+                    </p>
+                    <b>₹12,830</b><small style="text-decoration:line-through;margin-left:4px;">₹16,040</small><small style="color:red">(20% Off)</small>
+                  </div>
+                </div>
+            </div>        
+            <div class="card-group">
+                <div class="card">
+                  <img src=https://staticimg.titan.co.in/Xylys/Catalog/9295KM02_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">XYLYS BLACK DIAL STAINLESS STEEL STRAP WATCH FOR MEN
+                    </p>
+                    <b>₹30,750</b><small style="text-decoration:line-through;margin-left:4px;">₹41,000</small><small style="color:red">(25% Off)</small>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src=https://staticimg.titan.co.in/Titan/Catalog/90110NM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">SK MECHANICAL BLACK DIAL WATCH FOR MEN
+                    </p>
+                    <b>₹8995</b><small style="text-decoration:line-through;margin-left:4px;">₹12,995</small><small style="color:red">(31% Off)</small>
+                  </div>
+                </div>
+                <div class="card">
+                    <img src=https://staticimg.titan.co.in/Titan/Catalog/90110QM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">MECHANICAL BLUE DIAL WATCH FOR MEN
+                      </p>
+                      <b>₹15,195</b><small style="text-decoration:line-through;margin-left:4px;">₹18,995</small><small style="color:red">(20% Off)</small>
+                    </div>
+                  </div>
+                <div class="card">
+                  <img src=https://staticimg.titan.co.in/Titan/Catalog/90110WL04_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">MECHANICAL GREEN DIAL WATCH FOR MEN
+                    </p>
+                    <b>₹13,595</b><small style="text-decoration:line-through;margin-left:4px;">₹16,995</small><small style="color:red">(20% Off)</small>
+                  </div>
+                </div>
+            </div> <br>
+        <div class="card-group">
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/1683KM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">MECHANICAL SILVER DIAL WATCH FOR MEN
+                </p>
+                <b>₹15,195</b><small style="text-decoration:line-through;margin-left:4px;">₹18,995</small><small style="color:red">(20% Off)</small>
+              </div>
+            </div>
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/90158YM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">SK MECHANICAL SLIMLINE GREEN DIAL WATCH FOR MEN
+                </p>
+                <b>₹17,595</b><small style="text-decoration:line-through;margin-left:4px;">₹21,995</small><small style="color:red">(20% Off)</small>
+              </div>
+            </div>
+            <div class="card">
+                <img src=https://staticimg.titan.co.in/Titan/Catalog/90158KM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">TITAN MECHANICAL SLIMLINE BLUE DIAL WATCH FOR MEN
+                  </p>
+                  <b>₹18,395</b><small style="text-decoration:line-through;margin-left:4px;">₹22,995</small><small style="color:red">(20% Off)</small>
+                </div>
+              </div>
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/1595NM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">SK MECHANICAL SLIMLINE BLACK DIAL WATCH FOR MEN
+                </p>
+                <b>₹17,445</b><small style="text-decoration:line-through;margin-left:4px;">₹22,995</small><small style="color:red">(20% Off)</small>
+              </div>
+            </div>
+        </div> <br>
+        <div class="card-group">
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/1683SM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">SK MECHANICAL SLIMLINE GOLDEN DIAL WATCH FOR MEN
+                </p>
+                <b>₹18,395</b><small style="text-decoration:line-through;margin-left:4px;">₹22,995</small><small style="color:red">(20% Off)</small>
+              </div>
+            </div>
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Xylys/Catalog/45019QC01E_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">EDGE BLACK DIAL METAL STRAP WATCH
+                </p>
+                <b>₹12,250</b><small style="text-decoration:line-through;margin-left:4px;">₹17,995</small><small style="color:red">(30% Off)</small>
+              </div>
+            </div>
+            <div class="card">
+                <img src=https://staticimg.titan.co.in/Xylys/Catalog/45019QC02E_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">EDGE ANTHRACITE DIAL ROSE GOLD STRAP WATCH
+                  </p>
+                  <b>₹12,600</b><small style="text-decoration:line-through;margin-left:4px;">₹18,000</small><small style="color:red">(30% Off)</small>
+                </div>
+              </div>
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/95145KC01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">EDGE METAL SILVER DIAL STAINLESS STEEL STRAP WATCH
+                </p>
+                <b>₹13,445</b><small style="text-decoration:line-through;margin-left:4px;">₹19,300</small><small style="color:red">(30% Off)</small>
+              </div>
+            </div>
+        </div> <br>
+        <div class="card-group">
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/95145KC02_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">EDGE METAL SILVER DIAL STAINLESS STEEL STRAP WATCH
+                </p>
+                <b>₹12,600</b><small style="text-decoration:line-through;margin-left:4px;">₹18,000</small><small style="color:red">(30% Off)</small>
+              </div>
+            </div>
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/95147KD02_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Titan Talk S with 1.78" AMOLED Display.Advanced BT Calling,100+</p>
+                <b>₹8995</b><small style="text-decoration:line-through;margin-left:4px;">₹12,995</small><small style="color:red">(31% Off)</small>
+              </div>
+            </div>
+            <div class="card">
+                <img src=https://staticimg.titan.co.in/Titan/Catalog/95145KC02_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">XYLYS PINK DIAL CERAMIC STRAP WATCH FOR WOMEN
+                  </p>
+                  <b>₹18,875</b><small style="text-decoration:line-through;margin-left:4px;">₹26,500</small><small style="color:red">(25% Off)</small>
+                </div>
+              </div>
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/1841QC03_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">XYLYS BLUE DIAL CERAMIC STRAP WATCH FOR WOMEN
+                </p>
+                <b>₹19,875</b><small style="text-decoration:line-through;margin-left:4px;">₹26,500</small><small style="color:red">(25% Off)</small>
+              </div>
+            </div>
+        </div> <br>
+        <div class="card-group">
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/2675WM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">XYLYS BLACK DIAL CERAMIC STRAP WATCH FOR WOMEN
+                </p>
+                <b>₹19,875</b><small style="text-decoration:line-through;margin-left:4px;">₹26,500</small><small style="color:red">(25% Off)</small>
+              </div>
+            </div>
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/90148KD01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">POLICE BLACK DIAL QUARTZ ANALOG WATCH FOR MEN
+                </p>
+                <b>₹16,495</b>
+              </div>
+            </div>
+            <div class="card">
+                <img src=https://staticimg.titan.co.in/Titan/Catalog/90148KD02_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">POLICE BLACK DIAL QUARTZ ANALOG WATCH FOR MEN
+                  </p>
+                  <b>₹16,495</b>
+                </div>
+              </div>
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/90148KD03_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">POLICE BLACK DIAL QUARTZ MULTIFUNCTION WATCH FOR MEN
+                </p>
+                <b>₹15,495</b>
+              </div>
+            </div>
+        </div> <br>   
+        <div class="card-group">
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/95201WM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">POLICE BLACK DIAL QUARTZ MULTIFUNCTION WATCH FOR MEN
+                </p>
+                <b>₹16,495</b>
+              </div>
+            </div>
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/95164YM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">POLICE GREY DIAL QUARTZ MULTIFUNCTION WATCH FOR MEN
+                </p>
+                <b>₹15,495</b>
+              </div>
+            </div>
+            <div class="card">
+                <img src=https://staticimg.titan.co.in/Titan/Catalog/95165YM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">POLICE BLACK DIAL QUARTZ MULTIFUNCTION WATCH FOR MEN
+                  </p>
+                  <b>₹18,795</b>
+                </div>
+              </div>
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/95166YM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">TOMMY HILFIGER BLACK DIAL QUARTZ ANALOG WITH DATE WATCH FOR WOMEN
+                </p>
+                <b>₹15,495</b>
+              </div>
+            </div>
+        </div> <br>   
+        <div class="card-group">
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/1810NP01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">TOMMY HILFIGER CHAMPAGNE DIAL QUARTZ ANALOG WITH DATE WATCH FOR WOMEN
+                </p>
+                <b>₹15,995</b>
+              </div>
+            </div>
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/1811SL01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">TOMMY HILFIGER BLUE DIAL QUARTZ ANALOG WITH DATE WATCH FOR MEN
+                </p>
+                <b>₹17,995</b>
+              </div>
+            </div>
+            <div class="card">
+                <img src=https://staticimg.titan.co.in/Titan/Catalog/1811WL01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">TOMMY HILFIGER BLACK DIAL QUARTZ ANALOG WITH DATE WATCH FOR MEN
+                  </p>
+                  <b>₹18,495</b>
+                </div>
+              </div>
+            <div class="card">
+              <img src=https://staticimg.titan.co.in/Titan/Catalog/95177QM01_1.jpg?impolicy=pqmed&imwidth=640 class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">TOMMY HILFIGER GREY DIAL QUARTZ ANALOG WITH DATE WATCH FOR MEN
+                </p>
+                <b>₹18,495</b>
+              </div>
+            </div>
+        </div> <br>   
+        <div class="footer">
+                <div class="container">
+                    <div class="row" style="display:flex;
+                    flex-wrap:wrap;">
+                        <div class="footer-col">
+                            <h4>COMPANY</h4>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Bog</a></li>
+                                <li><a href="#">Contact Us:********85</a></li>
+                                <li><a href="#">Our Stors</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>POLICIES AND ORDER</h4>
+                            <ul>
+                                <li><a href="#">Authenticity Guarantee</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Shipping and Return Policies</a></li>
+                                <li><a href="#">Terms and Conditions</a></li>
+                                <li><a href="#">Warranty Information</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>HELP</h4>
+                            <ul>
+                                <li><a href="#">FAQ's</a></li>
+                                <li><a href="#">My Account</a></li>
+                                <li><a href="#">Track Order</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
+                            <p>Be the first hear about new arrivals,by-invitation-only scales and special events.</p>
+                            <form class="d-flex" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Email" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit" id="search-btn">Subscribe</button>
+                            </form><br>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    </body>
+</html>
